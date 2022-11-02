@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+  }
+  
+.wrapper{
+   
+    /* max-width: 450px; */
+    margin: 150px auto;
+    width:450px;
+    height:auto;
+    background: linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    border-radius: 10px;
+    padding: 2px;
+  }
+  
+.wrapper .search-input{
+    width: 310px;
+    margin-left: 20px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 50px;
+    position: relative;
+    /* box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12); */
+  }
+  .search-input .text-input{
+    width: 320px;
+    height: 35px;
+    background: transparent !important;
+    background-color:black;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    outline: none;
+  }
+
+ 
+  .search-input .icon{
+    position: absolute;
+    right: -87px;
+    top: 24.5px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  .search-input .send{
+    color: #ff7200;
+    font-size: 30px;
+  }
+  .send:hover{
+    color: #fff;
+}
+  
+
+ 
+ .delete-box{
+    width: 390px;
+    position: relative;
+    margin-top: 25px;
+    margin-left: 30px;
+    list-style: none;
+ } 
+ .todo-list{
+    display: flex;
+    background-color:#ff7200;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    width: 353px;
+   
+ }
+ .desc{
+    flex: 0.7;
+    font-size: 19px;
+    overflow: scroll;
+    margin-left: 10px;
+    margin-top: 0px;
+    scrollbar-width: none;
+    height: 35px;
+    color: #fff;
+    
+ }
+ .desc::-webkit-scrollbar {
+    display: none;
+  }
+  .todo-list .icon-container{
+    width: auto;
+    height: auto;
+  }
+ 
+  .todo-list .delete-btn{
+    flex: 0.3;
+    width: 40px;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    position: absolute;
+    right: 0;
+ }
+ .todo-list .delete-btn:hover{
+  background-color:#f6b077 ;
+ }
+
+ .todo-list .edit{ 
+    width: 40px;
+    height: 100%;
+    background-color:rgb(98, 218, 132);
+    position: absolute;
+    right: 40px;
+     border: none;
+ }
+ .todo-list .edit:hover{
+  background-color: rgb(179, 235, 195);
+ }
+ .poppups{
+  width:350px;
+    height:400px;
+    background: linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top: 230px;
+    left: 600px;
+    border-radius: 10px;
+    padding: 26px;
+    display:grid;
+
+}
+
+.spancontainer{
+  width: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+margin-left: 90px;
+margin-top: 20px;
+text-align: center;
+}
+.spancontainer span{
+color: #ff7200;
+font-size: 22px;
+font-weight: bold;
+
+ }
+ .head-edit .editor{
+  flex: 0.7;
+  margin-top: 0px;
+ color: #ff7200;
+  width: 300px;
+  text-align: center;
+  font-size: 22px;
+  overflow: scroll;
+  scrollbar-width: none;
+ }
+ .editor::-webkit-scrollbar {
+  display: none;
+}
+
+.cancel-btn{
+  width: 240px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  margin-left: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: .4s ease;
+}
+.cancel-btn:hover{
+  background-color: #fff;
+  color: black;
+}
+.poppups input {
+  width: 240px;
+  height: 35px;
+  background: transparent !important;
+  border-bottom: 1px solid #ff7200;
+  border-top: none;
+  border-left: none;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-left: 29px;
+  align-items: center;
+}
+.poppups input:focus{
+  outline: none;
+  background-color: #fff;
+}
+::placeholder{
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

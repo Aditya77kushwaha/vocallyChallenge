@@ -1,0 +1,14 @@
+###first terminal
+##cd ui 
+##npm i
+##npm start
+
+###second terminal
+##cd api
+##npm i
+##npm start
+
+#To use docker
+##docker build -t mern-image .
+##docker images
+##docker run -d -p 3080:3080 --name mern-stack mern-image

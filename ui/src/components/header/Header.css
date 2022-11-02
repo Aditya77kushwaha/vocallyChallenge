@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+  }
+  .topnav{
+width: 100%;
+height: 55px;
+overflow: hidden;
+background: linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+position: relative;
+box-shadow: 10px 1px 80px rgba(9, 0, 0, 0.1);
+
+  }
+  .usename{
+    background-color:  #ff7200;
+    height: 100%;
+  }
+  .username1{
+margin:12px;
+margin-left: 10px;
+padding: auto;
+ }
+
+ .button-container1{
+    margin:10px;
+    margin-left: 10px;
+    padding: auto;
+
+ }
+  
+  .login-button{
+   
+    
+    background-color:#fff ;
+    border-radius: 10%;
+    /* border-color: #ffff; */
+    outline: none;
+    border-color: #fff;
+   
+   
+    width: 85px;
+  }
+  .login-button{
+    font-size: 20px;
+    background-color:#ff7200;
+    color:#fff ;
+    
+  }
+  .login-button:hover{
+background-color: #fff;
+color: #ff7200;
+border-color: #ff7200;
+  }
+
+
+  .loglink{
+    background-color:  #ff7200;
+    height: 100%;
+    color: #fff;
+  
+  }
+  .loglink1{
+    margin:12px;
+margin-left: 10px;
+padding: auto;
+  }
+  .loglink1 span{
+    font-size: 20px;     
+    
+  }
+  .link-text{
+color: #fff;
+  }
+  .link-text:hover{
+    background-color: #fff;
+    color: #ff7200;
+  }
+ 
