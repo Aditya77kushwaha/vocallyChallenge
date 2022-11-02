@@ -3,7 +3,7 @@ Task 1
 principle. (Example: CRUD to manage book list in library, feel free to add any
 required attributes/schema)
 [x] You can use any framework in Nodejs, but we prefer Expressjs
-[] Document it using swagger.
+[x] Document it using swagger.
 
 Task 2
 [x] Dockerize the REST api with environment variables.

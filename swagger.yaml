@@ -1,0 +1,289 @@
+openapi: 3.0.3
+info:
+  title: Node.js RESTFUL API using Express.js
+  description: |-
+    CRUD operations on a todo list schema.
+
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  version: 1.0.0
+servers:
+  - url: http://localhost:8888
+tags:
+  - name: user
+    description: Operations about user
+
+  - name: todo
+    description: Access to User todos
+
+paths:
+  /todos/{id}:
+    get:
+      tags:
+        - todo
+      summary: Get all todos
+      description: Get all todos of user with ObjectId as id
+      operationId: getTodos
+      parameters:
+        - name: id
+          in: path
+          description: ID of user
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todos"
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Todos not found
+        "405":
+          description: Validation exception
+      security:
+        - petstore_auth:
+            - write:todos
+            - read:todos
+    put:
+      tags:
+        - todo
+      summary: Update a new todo to the list
+      description: Update a new todo to the list
+      operationId: updateTodo
+      parameters:
+        - name: id
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        description: Update a new todo in the list
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Todos"
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todos"
+        "405":
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:todos
+            - read:todos
+    delete:
+      tags:
+        - todo
+      summary: Delete a new todo to the list
+      description: Delete a new todo to the list
+      operationId: deleteTodo
+      parameters:
+        - name: id
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todos"
+        "405":
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:todos
+            - read:todos
+  /todo:
+    post:
+      tags:
+        - todo
+      summary: Add a new todo to the list
+      description: Add a new todo to the list
+      operationId: addTodo
+      requestBody:
+        description: Create a new todo in the list
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Todos"
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todos"
+        "405":
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:todos
+            - read:todos
+  /todo/{id}:
+    get:
+      tags:
+        - todo
+      summary: Get a todo from the list
+      description: Get a todo from the list
+      operationId: getTodo
+      parameters:
+        - name: id
+          in: path
+          description: ID of user to return
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todos"
+        "405":
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:todos
+            - read:todos
+
+  /login:
+    get:
+      tags:
+        - user
+      summary: Logs user into the system
+      description: ""
+      operationId: loginUser
+      responses:
+        "200":
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per 10 minutes allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+        "400":
+          description: Invalid username/password supplied
+  /register:
+    post:
+      tags:
+        - user
+      summary: Add a new user to the list
+      description: Add a new user to the list
+      operationId: addUser
+      requestBody:
+        description: Create a new user in the list
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "405":
+          description: Invalid input
+      security:
+        - petstore_auth:
+            - write:user
+            - read:user
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: string
+          example: "7jd73gd73tdg73rfd4f"
+        username:
+          type: string
+          format: string
+          example: "admin"
+        email:
+          type: string
+          format: string
+          example: "123@gmail.com"
+        password:
+          type: string
+          format: string
+        profilePicture:
+          type: string
+      xml:
+        name: user
+    Todos:
+      type: object
+      properties:
+        id:
+          type: string
+          format: string
+          example: "8nb73gd73tdg73r7sbf"
+        userId:
+          type: string
+          format: string
+          example: "7jd73gd73tdg73rfd4f"
+        desc:
+          type: string
+          format: string
+          example: "Eat"
+      xml:
+        name: todo
+
+  requestBodies:
+    Todos:
+      description: Pet object that needs to be added to the store
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Todos"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Todos"
+
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets

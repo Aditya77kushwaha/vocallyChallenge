@@ -110,9 +110,9 @@ app.post("/login", async (req, res, next) => {
 
 //todo routes
 //get all todos of a user
-app.get("/todos/:username", async (req, res, next) => {
+app.get("/todos/:id", async (req, res, next) => {
   try {
-    const user = await User.findOne({ _id: req.params.username });
+    const user = await User.findOne({ _id: req.params.id });
     const todos = await Todo.find({ userId: user._id });
     res.status(200).json(todos);
   } catch (err) {
@@ -122,7 +122,7 @@ app.get("/todos/:username", async (req, res, next) => {
 });
 
 //get a todo
-app.get("/todos/:id", async (req, res, next) => {
+app.get("/todo/:id", async (req, res, next) => {
   try {
     const todos = await Todo.findById(req.params.id);
     res.status(200).json(todos);

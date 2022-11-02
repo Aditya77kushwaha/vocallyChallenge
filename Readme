@@ -1,14 +1,27 @@
-###first terminal
-##cd ui 
-##npm i
-##npm start
+### first terminal
 
-###second terminal
-##cd api
-##npm i
-##npm start
+## cd ui
 
-#To use docker
-##docker build -t mern-image .
-##docker images
-##docker run -d -p 3080:3080 --name mern-stack mern-image
+## npm i
+
+## npm start
+
+### second terminal
+
+## cd api
+
+## npm i
+
+## npm start
+
+# To use docker
+
+## docker build -t mern-image .
+
+## docker images
+
+## docker run -d -p 3080:3080 --name mern-stack mern-image
+
+### To view architecture diagram, head over to https://app.diagrams.net/ and upload Architecture.
+
+### To view swagger documentation, head over to https://editor.swagger.io/ and paste swagger.yaml to left side editor.
